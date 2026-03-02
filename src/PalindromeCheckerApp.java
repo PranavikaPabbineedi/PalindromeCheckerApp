@@ -1,19 +1,32 @@
 public class PalindromeCheckerApp {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
+        System.out.println("====================================");
+        System.out.println("        Palindrome Checker App");
+        System.out.println("        Version 1.0");
+        System.out.println("====================================");
+        System.out.println("Welcome! This application checks whether a word is a palindrome.\n");
 
-            String word = "madam";
+        String word = "level";
+        boolean isPalindrome = true;
 
-            String reversed = "";
+        char[] chars = word.toCharArray();
 
-            for (int i = word.length() - 1; i >= 0; i--) {
-                reversed = reversed + word.charAt(i);
+        int start = 0;
+        int end = chars.length - 1;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
             }
-
-            if (word.equals(reversed)) {
-                System.out.println(word + " is a Palindrome.");
-            } else {
-                System.out.println(word + " is NOT a Palindrome.");
-            }
-
+            start++;
+            end--;
         }
+
+        if (isPalindrome) {
+            System.out.println("\"" + word + "\" is a Palindrome (UC4).");
+        } else {
+            System.out.println("\"" + word + "\" is NOT a Palindrome (UC4).");
+        }
+    }
 }
