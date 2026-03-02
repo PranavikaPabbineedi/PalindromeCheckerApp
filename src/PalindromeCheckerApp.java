@@ -6,27 +6,17 @@ public class PalindromeCheckerApp {
         System.out.println("====================================");
         System.out.println("Welcome! This application checks whether a word is a palindrome.\n");
 
-        String word = "level";
-        boolean isPalindrome = true;
+        String original = "racecar";
+        String reversed = "";
 
-        char[] chars = word.toCharArray();
-
-        int start = 0;
-        int end = chars.length - 1;
-
-        while (start < end) {
-            if (chars[start] != chars[end]) {
-                isPalindrome = false;
-                break;
-            }
-            start++;
-            end--;
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
-        if (isPalindrome) {
-            System.out.println("\"" + word + "\" is a Palindrome (UC4).");
+        if (original.equals(reversed)) {
+            System.out.println("\"" + original + "\" is a Palindrome.");
         } else {
-            System.out.println("\"" + word + "\" is NOT a Palindrome (UC4).");
+            System.out.println("\"" + original + "\" is NOT a Palindrome.");
         }
     }
 }
